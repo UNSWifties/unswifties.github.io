@@ -1,0 +1,9 @@
+name: building-website
+run-name: ${{ github.actor }} is building the website
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/
