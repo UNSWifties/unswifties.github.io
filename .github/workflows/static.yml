@@ -22,8 +22,9 @@ concurrency:
 
 jobs:
   runs-on: ubuntu-latest
-  uses: actions/checkout@v3
+
   build:
+    uses: actions/checkout@v3
     uses: actions/setup-node@v3
     with:
       node-version: latest
@@ -33,10 +34,13 @@ jobs:
     run: npm run export
 
   deploy:
+    needs: build
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Upload artifact
