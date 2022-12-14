@@ -29,9 +29,9 @@ jobs:
       with:
         node-version: latest
         cache: 'npm'
-      run: npm clean-install
-      run: npm run build
-      run: npm run export
+      runs: npm clean-install
+      runs: npm run build
+      runs: npm run export
 
   deploy:
     needs: build
