@@ -24,14 +24,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      uses: actions/checkout@v3
-      uses: actions/setup-node@v3
-      with:
-        node-version: latest
-        cache: 'npm'
-      runs: npm clean-install
-      runs: npm run build
-      runs: npm run export
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: latest
+          cache: 'npm'
+      - run: npm clean-install
+      - run: npm run build
+      - run: npm run export
 
   deploy:
     needs: build
