@@ -36,9 +36,10 @@ jobs:
         with:
           node-version: latest
           cache: 'npm'
-        run: npm clean-install
-        run: npm run build
-        run: npm run export
+        run: | 
+          npm clean-install
+          npm run build
+          npm run export
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
