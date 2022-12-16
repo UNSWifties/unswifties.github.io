@@ -1,3 +1,9 @@
+import Navigation from "components/navigation"
+
+const PAGES : string[] = ["Home", "About", "Blog", "Contact"];
+
 export default function Home() {
-  return (<h1>Hello, World!</h1>)
+  return (
+    <Navigation links={PAGES}></Navigation>
+  )
 }
