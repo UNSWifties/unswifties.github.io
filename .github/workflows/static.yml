@@ -21,24 +21,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: latest
-          cache: 'npm'
-      - name: Run tests
-        run: | 
-          npm clean-install
-          npx playwright install
-          npm run test
-
   deploy:
-    needs: test
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -46,22 +29,26 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          submodules: true
+          fetch-depth: 0
+
       - name: Setup Pages
         uses: actions/configure-pages@v2
-      - name: Setup Node
-        uses: actions/setup-node@v3
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
         with:
-          node-version: latest
-          cache: 'npm'
+          hugo-version: 'latest'    
+
       - name: Build
-        run: | 
-          npm clean-install
-          npm run build
-          npm run export
+        run: hugo --minify
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: './out'
+          path: './public'
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
