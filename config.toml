@@ -1,7 +1,0 @@
-baseURL = '/'
-languageCode = 'en-us'
-title = 'UNSwifites'
-theme = '.'
-[params]
-  cover = 'cover.png'
-	noauthor = true
