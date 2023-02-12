@@ -28,7 +28,7 @@ enableRobotsTXT = true
 
     # The size parameter is the class name of tailwindcss
     # https://tailwindcss.com/
-    size = "h-16"
+    size = "h-14"
 
   [params.site]
     name = "UNSWifties"
