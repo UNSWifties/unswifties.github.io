@@ -1,18 +1,19 @@
 [
   {
-    "title": "Simple",
-    "description": "All the bare necessities are there.",
-    "icon": "icon-desktop_windows"
+    "title": "Events",
+    "description": "A fundamental aim of our society is to connect Swifties together. We accomplish this through a wide variety of society events.",
+    "icon": "fa-regular fa-calendar-days"
   },
   {
-    "title": "Fast",
-    "description": "Light weight and fast loading speed.",
-    "icon": "icon-lightbulb_outline"
+    "title": "Publications",
+    "description": "To keep our members up-to-date with the latest Taylor-related news, we write a regular publication for our members.",
+    "icon": "fa-regular fa-pen-to-square",
+    "link": "/blog"
   },
   {
-    "title": "Github",
-    "description": "Please fork the Github repository and contribute to this theme!",
-    "icon": "icon-github",
-    "link": "https://github.com/opera7133/tella"
+    "title": "Publications",
+    "description": "To keep our members up-to-date with the latest Taylor-related news, we write a regular publication for our members.",
+    "icon": "fa-regular fa-pen-to-square",
+    "link": "/blog"
   }
 ]
