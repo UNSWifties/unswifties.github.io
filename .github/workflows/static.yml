@@ -50,7 +50,7 @@ jobs:
       - name: Build
         run: |
           npm ci 
-          npm build
+          npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
